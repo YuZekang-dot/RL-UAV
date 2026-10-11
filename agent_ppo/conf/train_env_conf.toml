@@ -1,0 +1,16 @@
+[env_conf]
+num_envs = 4096
+random_seed = 0
+
+[env_conf.task_obstaclehover]
+num_obstacles_range = [0, 0]
+radius_choices = []
+nav_max_steps = 1500
+hover_max_steps = 150
+max_collisions = 5
+num_waypoints_range = [0, 0]
+
+# Stage progression and gates are defined in ../../configs/curriculum.toml.
+# Zero obstacles requires the confirmed training-environment extension; the
+# official evaluation adapter must still reject zero-obstacle eval profiles.
+

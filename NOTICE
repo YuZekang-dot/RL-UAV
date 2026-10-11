@@ -1,0 +1,13 @@
+RL-UAV ObstacleHover portfolio rewrite
+Copyright (c) 2026 the project contributors. All rights reserved unless a
+separate license is added by the rights holder.
+
+This public source tree is a clean implementation built from documented
+interfaces and research ideas. Tencent KaiwuDRL, NVIDIA Isaac Sim,
+OmniDrones, the competition environment, generated protocol classes, and
+competition platform templates are external dependencies and are not
+distributed here.
+
+Research attribution is listed in THIRD_PARTY.md. No endorsement by the
+referenced authors or platform vendors is implied.
+

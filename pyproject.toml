@@ -1,0 +1,51 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "rl-uav-obstacle-hover"
+version = "0.1.0"
+description = "Multi-task PPO, obstacle-aware target management, and curriculum learning for Crazyflie ObstacleHover."
+readme = "README.md"
+requires-python = ">=3.10,<3.12"
+dependencies = [
+  "numpy>=1.26,<3",
+  "tomli>=2,<3; python_version<'3.11'",
+]
+
+[project.optional-dependencies]
+model = ["torch>=2.2,<3"]
+demo = ["matplotlib>=3.8,<4", "pillow>=10,<13"]
+dev = [
+  "torch>=2.2,<3",
+  "matplotlib>=3.8,<4",
+  "pillow>=10,<13",
+  "pytest>=8,<10",
+  "pytest-cov>=5,<8",
+  "ruff>=0.6,<1",
+]
+
+[project.scripts]
+rl-uav-demo = "rl_uav.demo:main"
+rl-uav-benchmark = "rl_uav.evaluation.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src", "."]
+include = ["rl_uav*", "agent_ppo*"]
+exclude = ["tests*", "local_archive*"]
+
+[tool.pytest.ini_options]
+addopts = "-ra --strict-markers"
+testpaths = ["tests"]
+markers = [
+  "platform: requires external KaiwuDRL and Isaac Sim dependencies",
+]
+
+[tool.ruff]
+target-version = "py310"
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM"]
+ignore = ["E501"]
+

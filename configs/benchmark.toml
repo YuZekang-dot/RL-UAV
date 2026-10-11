@@ -1,0 +1,32 @@
+schema_version = 1
+training_seeds = [0, 1, 2, 3, 4]
+evaluation_interval_transitions = 1_000_000
+episodes_per_evaluation = 50
+held_out_seed_base = 20260300
+bootstrap_samples = 10_000
+bootstrap_seed = 2026
+required_consecutive_parity = 3
+
+[parity]
+total_score_ratio_min = 0.95
+success_rate_delta_min = -0.02
+waypoint_score_delta_min = -0.02
+collision_rate_delta_max = 0.01
+hover_error_ratio_max = 1.05
+
+[profiles.official]
+num_obstacles = [2, 8]
+radius_choices = [0.15, 0.20, 0.25, 0.30, 0.35, 0.40, 0.45]
+num_waypoints = [3, 8]
+max_collisions = 1
+nav_max_steps = 1500
+hover_max_steps = 150
+
+[profiles.extreme]
+num_obstacles = [8, 8]
+radius_choices = [0.45]
+num_waypoints = [8, 8]
+max_collisions = 1
+nav_max_steps = 1500
+hover_max_steps = 150
+

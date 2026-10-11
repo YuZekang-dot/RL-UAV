@@ -1,0 +1,9 @@
+[ppo]
+actor_agent = "agent_ppo.agent.Agent"
+learner_agent = "agent_ppo.agent.Agent"
+aisrv_agent = "agent_ppo.agent.Agent"
+train_workflow = "agent_ppo.workflow.train_workflow.workflow"
+
+# eval_workflow and exam_workflow belong to the authorized KaiwuDRL package
+# and must be merged into this file in the private platform deployment.
+

@@ -1,0 +1,8 @@
+[drone_obstacle_nav]
+algorithm = "ppo"
+task = "ObstacleHover"
+
+[drone_obstacle_nav.public_adapter]
+agent = "agent_ppo.agent.Agent"
+external_platform_required = true
+
